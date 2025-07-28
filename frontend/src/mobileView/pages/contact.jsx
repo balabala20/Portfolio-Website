@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const base_url = `https://localhost:5000`;
+const base_url = `https://portfoliowebsite-two-taupe.vercel.app`;
 
 function Contact() {
   const [name, setName] = useState("");
@@ -14,6 +14,9 @@ function Contact() {
     // Input validation
     if (!name || !email || !message) {
       setFeedback("All fields are required.");
+      setTimeout(() => {
+        setFeedback("");
+      }, 2000);
       return;
     }
 
@@ -33,7 +36,7 @@ function Contact() {
           setFeedback("");
         }, 2000);
       } else {
-        setFeedback("this user is already contact us");
+        setFeedback("there was an error adding the user to the database.");
         setTimeout(() => {
           setFeedback("");
         }, 2000);
