@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const base_url =`https://portfoliowebsite-two-taupe.vercel.app`;
+const base_url =`https://portfolio-website-backend-or2jycyln-balasivas-projects.vercel.app`;
 
 
 function Contact() {

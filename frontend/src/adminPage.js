@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 
-const base_url = `https://portfoliowebsite-two-taupe.vercel.app`;
+const base_url = `https://portfolio-website-backend-or2jycyln-balasivas-projects.vercel.app`;
 
 const AdminPage = () => {
   const [data, setData] = useState([]);
