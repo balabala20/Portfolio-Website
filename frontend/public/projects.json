@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "name" : "Portfolio Website",
+            "image" : "/img/project1.png",
+            "description" : "A personal portfolio website showcasing my skills and projects.",
+            "technologies" : ["HTML, ", "CSS, ", "React, ", "Node, ", "Express, ", "Mongodb"],
+            "url" : "https://balasiva-portfolio-frontend.vercel.app/"
+        },
+        {
+            "name" : "Calculator",
+            "image" : "/img/project2.jpg",
+            "description" : " A simple calculator application built with JavaScript.",
+            "technologies" : ["HTML, ", "CSS, ", "JavaScript, ", "react"],
+            "url" : "https://calculator-app-rosy-iota.vercel.app/"
+        }
+    ]
+}

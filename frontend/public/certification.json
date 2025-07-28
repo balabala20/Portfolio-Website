@@ -1,0 +1,20 @@
+{
+    "certifications": [
+        {
+            "name": "PLC-SCADA Certificate",
+            "image": "/img/plc-scada-certificate.jpg"
+        },
+        {
+            "name": "Web Development Certificate",
+            "image": "/img/web-development-certificate.jpg"
+        },
+        {
+            "name": "Data Science Certificate",
+            "image": "/img/data-science-certificate.jpg"
+        },
+        {
+            "name": "Figma Bootcamp Certificate",
+            "image": "/img/figma_bootcamp_certificate.jpg"
+        }
+    ]
+}
