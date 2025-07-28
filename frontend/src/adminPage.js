@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const base_url = `https://portfolio-website-backend-ashy.vercel.app/`;
+const base_url = `https://portfolio-website-backend-ashy.vercel.app`;
 
 const AdminPage = () => {
   const [data, setData] = useState([]);
