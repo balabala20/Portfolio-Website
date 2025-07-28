@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 
+<<<<<<< HEAD
 const base_url =`https://portfoliowebsite-two-taupe.vercel.app`;
+=======
+const base_url =`https://portfolio-website-backend-ashy.vercel.app`;
+>>>>>>> a456ce1f5d92f7b982b6c6bb52672ec86fcd2bdc
 
 function Contact() {
   const [name, setName] = useState("");

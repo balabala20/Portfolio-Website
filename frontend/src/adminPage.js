@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
+<<<<<<< HEAD
 const base_url = `https://portfoliowebsite-two-taupe.vercel.app`;
+=======
+const base_url = `https://portfolio-website-backend-ashy.vercel.app`;
+>>>>>>> a456ce1f5d92f7b982b6c6bb52672ec86fcd2bdc
 
 const AdminPage = () => {
   const [data, setData] = useState([]);
