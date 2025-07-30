@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const base_url = `https://portfolio-website-backend-ashy.vercel.app`;
+const base_url = `https://portfolio-website-backend-qaqf.onrender.com`;
 
 function Contact() {
   const [name, setName] = useState("");
