@@ -8,7 +8,7 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [feedback, setFeedback] = useState("");
-  const userHandler = async (e) => {
+   const userHandler = async (e) => {
     e.preventDefault();
 
     // Input validation
@@ -20,23 +20,29 @@ function Contact() {
       return;
     }
 
+    setIsSubmitting(true);
+    setFeedback("Submitting...");
+
     try {
       const user = { name, email, message }; // Define user object here
       const response = await fetch(`${base_url}/users/adduser`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // Fixed typo
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(user),
       });
 
       if (response.ok) {
         setFeedback("User added successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
         setTimeout(() => {
           setFeedback("");
         }, 2000);
       } else {
-        setFeedback("there was an error adding the user to the database.");
+        setFeedback("There was an error adding the user to the database.");
         setTimeout(() => {
           setFeedback("");
         }, 2000);
@@ -44,10 +50,13 @@ function Contact() {
     } catch (error) {
       setFeedback("An error occurred. Please try again later.");
       setTimeout(() => {
-          setFeedback("");
-        }, 2000);
+        setFeedback("");
+      }, 2000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
 
   return (
     <div>

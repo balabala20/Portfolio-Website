@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const base_url = `https://portfolio-website-backend-qaqf.onrender.com`;
 
@@ -7,6 +7,7 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const userHandler = async (e) => {
     e.preventDefault();
@@ -20,23 +21,29 @@ function Contact() {
       return;
     }
 
+    setIsSubmitting(true);
+    setFeedback("Submitting...");
+
     try {
       const user = { name, email, message }; // Define user object here
       const response = await fetch(`${base_url}/users/adduser`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // Fixed typo
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(user),
       });
 
       if (response.ok) {
         setFeedback("User added successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
         setTimeout(() => {
           setFeedback("");
         }, 2000);
       } else {
-        setFeedback("there was an error adding the user to the database.");
+        setFeedback("There was an error adding the user to the database.");
         setTimeout(() => {
           setFeedback("");
         }, 2000);
@@ -46,37 +53,40 @@ function Contact() {
       setTimeout(() => {
         setFeedback("");
       }, 2000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  let contact = (
-    <div id="contact_section">
-      <form id="mobile_form" onSubmit={userHandler}>
+  return (
+    <div>
+      <form id="form" onSubmit={userHandler}>
         <div>
           <h2>Contact me</h2>
           <br />
         </div>
-        <div id="textmail">
+        <div id="txtmail">
           <div>
             <input
               type="text"
               placeholder="Full Name"
-              id="Fname"
-              className="formText"
+              id="fname"
               name="firstname"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
+            <br />
+            <br />
           </div>
-          <br />
           <div>
             <input
               type="email"
               placeholder="Email address"
-              id="Mailid"
-              className="formText"
+              id="mailid"
               name="mailid"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
-            ></input>
+            />
           </div>
           <br />
           <div>
@@ -84,18 +94,25 @@ function Contact() {
               placeholder="text message"
               id="msg"
               cols={10}
-              rows={5}
+              rows={3}
+              value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+          <br />{" "}
+          <div>
+            <input
+              type="submit"
+              id="submit"
+              value={isSubmitting ? "Submitting..." : "Submit"}
+              disabled={isSubmitting}
+            />
+          </div>
         </div>
-        <br />
-        <input type="Submit" value="Send Message" id="mobile_submit" />
         <p>{feedback}</p>
       </form>
     </div>
   );
-  return contact;
 }
 
 export default Contact;
