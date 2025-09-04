@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const base_url = `https://portfolio-website-backend-qaqf.onrender.com`;
+const base_url = process.env.React_App_Backend_Url;
 
 
 function Contact() {
