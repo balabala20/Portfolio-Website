@@ -13,6 +13,13 @@
             "description" : " A simple calculator application built with JavaScript.",
             "technologies" : ["HTML, ", "CSS, ", "JavaScript, ", "react"],
             "url" : "https://calculator-app-rosy-iota.vercel.app/"
+        },
+        {
+            "name" : "Expence Tracker",
+            "image" : "/img/project3.png",
+            "description" : " A simple expence tracker application built with JavaScript.",
+            "technologies" : ["HTML, ", "CSS, ", "React, ", "Node, ", "Express, ", "Mongodb"],
+            "url" : "https://expence-tracker-frontend-mu.vercel.app/"
         }
     ]
 }

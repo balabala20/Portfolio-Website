@@ -23,6 +23,7 @@ mongoose
 app.get("/",(req,res)=>{
   return res.send("Backend is running")
 })
+
 app.use("/users", userRoutes);
 
 

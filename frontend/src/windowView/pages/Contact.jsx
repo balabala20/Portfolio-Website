@@ -7,7 +7,7 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState("")
    const userHandler = async (e) => {
     e.preventDefault();
 
@@ -19,8 +19,6 @@ function Contact() {
       }, 2000);
       return;
     }
-
-    setIsSubmitting(true);
     setFeedback("Submitting...");
 
     try {
@@ -52,8 +50,6 @@ function Contact() {
       setTimeout(() => {
         setFeedback("");
       }, 2000);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 

@@ -1,5 +1,6 @@
 const User = require("../Models/User");
 
+
 const createUser = async (req,res)=>{
     try{
         const {name,email,message} = req.body;
